@@ -15,10 +15,16 @@ class Solution:
         for number in range(len(s)):
             if number < len(s) - 1:
                 if roman[s[number]] < roman[s[number + 1]]:
-                    
+                    #if current value is smaller than next value - subtract 
+                    total -= roman[s[number]]
+                else:
+                    total += roman[s[number]]
+            else:
+                total += roman[s[number]]
+        print(total)
+        return total
 
 
-s = "III"
+s = "LIV"
 solution = Solution()
 result = solution.romanToInt(s)
-print(result)
