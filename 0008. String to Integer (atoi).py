@@ -18,8 +18,7 @@ class Solution:
             s = s[1:]
 
         #criteria 3 
-        #read s and skip leading 0 or until a non digit char or end of str is reached 
-        print("hello")
+        #read s and skip leading 0 or until a non digit char or end of str is reached
         s = s.lstrip("0")
         for i in s:
             if i.isdigit():
@@ -28,7 +27,15 @@ class Solution:
             else:
                 break
 
-        return s 
+        number *= sign 
+
+        #criteria 4 
+        if number > 2**31 - 1:
+            number = 2**31 - 1
+        elif number < -2**31:
+            number = -2**31
+
+        return number
 
 
 solution = Solution()
