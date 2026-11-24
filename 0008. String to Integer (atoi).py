@@ -16,6 +16,9 @@ class Solution:
             print("num is neg")
             sign = -1
             s = s[1:]
+        elif s[0] == "+":
+            sign = 1 
+            s = s[1:]
 
         #criteria 3 
         #read s and skip leading 0 or until a non digit char or end of str is reached
